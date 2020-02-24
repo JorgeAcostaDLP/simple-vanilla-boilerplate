@@ -1,3 +1,4 @@
+![Node.js CI](https://github.com/JorgeAcostaDLP/simple-vanilla-boilerplate/workflows/Node.js%20CI/badge.svg)
 # Simple Vanilla Boilerplate w/ Jest and Webpack
 
 ![ice cream](https://media2.giphy.com/media/cCEt1ShfzOa3u/giphy.gif)
