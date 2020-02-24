@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "start": "npm run webpack:prod",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "server": "simplehttpserver",
