@@ -7,15 +7,29 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div>
-      <div>
-        <h1>HEADER</h1>
+    <div class="background">
+      <div class="banner">
+        <h1>SCOOPS AHOY!!</h1>
       </div>
-      <div>
-        <h2>GALLERY</h2>
+      <div class="gallery">
+        <h2>Look:</h2>
+        <div class="js-Carousel" id="carousel">
+          <ul>
+            <li><img src="/images/img1.jpg" /></li>
+            <li><img src="/images/img2.jpg" /></li>
+            <li><img src="/images/img3.jpg" /></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <span>POP-UP</span>
+      <div class="chat">
+        <span>
+          <form id="form">
+            Enter a question:
+            <input id="userText" /><button type="submit" id="submit">
+              submit
+            </button>
+          </form>
+        </span>
       </div>
     </div>
     <script src="dist/main.js"></script>
