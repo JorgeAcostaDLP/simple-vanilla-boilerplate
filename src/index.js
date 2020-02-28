@@ -1,4 +1,3 @@
-import sum from './sum';
 import axios from 'axios';
 const Carousel = require('vanilla-js-carousel');
 let res;
@@ -87,7 +86,7 @@ const main = async () => {
     dots: true, // show navigation dots
     arrows: true, // show navigation arrows
     buttons: false, // hide <play>/<stop> buttons,
-    btnStopText: 'Pause' // <stop> button text
+    btnStopText: 'Pause', // <stop> button text
   });
 
   // Show the 3rd slide (Numeration of slides starts at 0)
@@ -97,3 +96,9 @@ const main = async () => {
   carousel.next();
 };
 main();
+
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
+server.listen(server_port, server_host, function() {
+  console.log('Listening on port %d', server_port);
+});
