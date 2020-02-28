@@ -4,9 +4,9 @@ const Carousel = require('vanilla-js-carousel');
 let res;
 const handleClick = e => {
   e.preventDefault();
-  const userText = document.getElementById('userText').value;
-  let newText = userText.slice(userText.lastIndexOf('\n')).toLowerCase();
-  console.log(newText);
+  const userText = document.getElementById('userQuestion').value;
+  let newText = userText.toLowerCase();
+
   let zipcode;
   let icecream = [];
   if (newText.includes('is there ice cream in')) {
@@ -21,8 +21,9 @@ const handleClick = e => {
   }
   switch (newText) {
     default:
-      document.getElementById('userText').value +=
-        '\nYeah, that would be a NO!';
+      document.getElementById(
+        'userText'
+      ).value += `\nYeah, that would be a NO!`;
       break;
     case 'hello':
       document.getElementById('userText').value += '\nHi there';
@@ -42,21 +43,20 @@ const handleClick = e => {
       response === 1
         ? (document.getElementById(
             'userText'
-          ).value += `\nTurns out I'm a pretty damn good babysitter.
-      `)
+          ).value += `\nTurns out I'm a pretty damn good babysitter.`)
         : (document.getElementById(
             'userText'
-          ).value += `\nMan, kids are the worst! Who needs 'em, anyway?
-
-      `);
+          ).value += `\nMan, kids are the worst! Who needs 'em, anyway?`);
       break;
     case `is there ice cream in`:
       zipcode = zipcode.toString();
-      document.getElementById(
-        'userText'
-      ).value += `Yes there is icecream in ${zipcode.toString()} check it out: ${icecream.map(
-        e => `\n${e}`
-      )}`;
+      icecream.length >= 1
+        ? (document.getElementById(
+            'userText'
+          ).value += `\nYes there is icecream in ${zipcode.toString()} check it out: ${icecream.map(
+            e => `\n${e}`
+          )}`)
+        : (document.getElementById('userText').value += '\nSorry, NO!');
 
       break;
   }
