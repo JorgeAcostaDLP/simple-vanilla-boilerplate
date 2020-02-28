@@ -18,18 +18,22 @@
             <li><img src="/images/img1.jpg" /></li>
             <li><img src="/images/img2.jpg" /></li>
             <li><img src="/images/img3.jpg" /></li>
+            <li><img src="/images/img4.jpg" /></li>
           </ul>
         </div>
       </div>
-      <div class="chat">
-        <span>
-          <form id="form">
-            Enter a question:
-            <input id="userText" /><button type="submit" id="submit">
-              submit
-            </button>
-          </form>
-        </span>
+
+      <button class="btnOpen" id="btnOpen">Chat</button>
+      <div class="chat" id="form">
+        <form class="form-container">
+          <label for="msg"><b>Message</b></label>
+          <textarea id="userText" placeholder="Type message.."></textarea>
+
+          <button class="btnSend" type="submit" id="btnSend">
+            Send
+          </button>
+          <button class="btnCancel" type="button" id="btnClose">Close</button>
+        </form>
       </div>
     </div>
     <script src="dist/main.js"></script>

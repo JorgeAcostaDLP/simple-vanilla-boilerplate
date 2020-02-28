@@ -5,7 +5,7 @@ let res;
 const handleClick = e => {
   e.preventDefault();
   const userText = document.getElementById('userText').value;
-  let newText = userText.toLowerCase();
+  let newText = userText.slice(userText.lastIndexOf('\n')).toLowerCase();
   console.log(newText);
   let zipcode;
   let icecream = [];
@@ -15,43 +15,64 @@ const handleClick = e => {
 
     for (let i = 0; i < 761; i++) {
       if (res.data[i].address.includes(zipcode))
-        icecream.push(res.data[i].name + ' at ' + res.data[i].url);
+        icecream.push(res.data[i].name + ' at ' + res.data[i].address);
     }
     console.log(icecream);
   }
   switch (newText) {
     default:
-      alert('Yeah, that would be a NO!');
+      document.getElementById('userText').value +=
+        '\nYeah, that would be a NO!';
       break;
     case 'hello':
-      alert('Hi there');
+      document.getElementById('userText').value += '\nHi there';
+      break;
+    case 'goodbye':
+      document.getElementById('userText').value += '\nGoodbye!';
       break;
     case 'scoops ahoy':
-      alert('Thats right!!');
+      document.getElementById('userText').value += '\nThats right!!';
       break;
     case 'where are you located?':
-      alert('Starcourt mall, Hawkins Indiana');
+      document.getElementById('userText').value +=
+        '\nStarcourt mall, Hawkins Indiana';
       break;
     case 'what do you think about kids?':
       let response = Math.round(Math.random());
       response === 1
-        ? alert(`Turns out I'm a pretty damn good babysitter.
+        ? (document.getElementById(
+            'userText'
+          ).value += `\nTurns out I'm a pretty damn good babysitter.
       `)
-        : alert(`Man, kids are the worst! Who needs 'em, anyway?
+        : (document.getElementById(
+            'userText'
+          ).value += `\nMan, kids are the worst! Who needs 'em, anyway?
 
       `);
       break;
     case `is there ice cream in`:
       zipcode = zipcode.toString();
-      alert(
-        `Yes there is icecream in ${zipcode.toString()} check it out: ${icecream.map(
-          e => `\n${e}`
-        )}`
-      );
+      document.getElementById(
+        'userText'
+      ).value += `Yes there is icecream in ${zipcode.toString()} check it out: ${icecream.map(
+        e => `\n${e}`
+      )}`;
 
       break;
   }
 };
+const openForm = e => {
+  e.preventDefault();
+  document.getElementById('form').style.display = 'block';
+};
+const closeForm = e => {
+  e.preventDefault();
+  document.getElementById('form').style.display = 'none';
+  document.getElementById('userText').value = '';
+};
+document.getElementById('btnSend').addEventListener('click', handleClick);
+document.getElementById('btnOpen').addEventListener('click', openForm);
+document.getElementById('btnClose').addEventListener('click', closeForm);
 const main = async () => {
   res = await axios.get('https://project.wnyc.org/ice-cream/data/places.json');
 
@@ -73,6 +94,4 @@ const main = async () => {
   // Move to the next slide
   carousel.next();
 };
-
-document.getElementById('submit').addEventListener('click', handleClick);
 main();

@@ -1,5 +1,4 @@
 body {
-  background-image: url('./images/bg.jpg');
   /* opacity: 80%; */
   text-align: center;
 }
@@ -7,16 +6,72 @@ body {
   display: inline-block”;
 }
 .banner {
-  background-color: darkslategrey;
-  text-shadow: 3px 2px red;
+  background-image: url('./images/bg.jpg');
+  font-size: xx-large;
+  text-shadow: 3px 2px rgb(246, 246, 246);
 }
-.gallery {
-  /* background-color: blue; */
+.btnOpen {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
 }
 .chat {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
   background-color: white;
-  width: 400px;
-  display: inline-block;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.btnSend {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+.btnCancel {
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
 
 .js-Carousel {
