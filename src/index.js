@@ -60,6 +60,7 @@ const handleClick = e => {
 
       break;
   }
+  document.getElementById('userQuestion').value = '';
 };
 const openForm = e => {
   e.preventDefault();
@@ -70,6 +71,7 @@ const closeForm = e => {
   document.getElementById('form').style.display = 'none';
   document.getElementById('userText').value = '';
 };
+
 document.getElementById('btnSend').addEventListener('click', handleClick);
 document.getElementById('btnOpen').addEventListener('click', openForm);
 document.getElementById('btnClose').addEventListener('click', closeForm);
