@@ -5,7 +5,6 @@ const handleClick = e => {
   e.preventDefault();
   const userText = document.getElementById('userQuestion').value;
   let newText = userText.toLowerCase();
-
   let zipcode;
   let icecream = [];
   if (newText.includes('is there ice cream in')) {
@@ -79,7 +78,7 @@ const main = async () => {
 
   var carousel = new Carousel({
     elem: 'carousel', // id of the carousel container
-    autoplay: false, // starts the rotation automatically
+    autoplay: true, // starts the rotation automatically
     infinite: true, // enables infinite mode
     interval: 0, // interval between slide changes
     initial: 0, // slide to start with
@@ -97,8 +96,8 @@ const main = async () => {
 };
 main();
 
-var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
-var server_host = process.env.YOUR_HOST || '0.0.0.0';
-server.listen(server_port, server_host, function() {
-  console.log('Listening on port %d', server_port);
-});
+// var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+// var server_host = process.env.YOUR_HOST || '0.0.0.0';
+// server.listen(server_port, server_host, function() {
+//   console.log('Listening on port %d', server_port);
+// });

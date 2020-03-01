@@ -1,5 +1,4 @@
 body {
-  /* opacity: 80%; */
   text-align: center;
   background-image: url('./images/images.jpg');
 }
@@ -75,6 +74,7 @@ body {
 .btnSend {
   background-color: #329997;
   color: white;
+  opacity: 95%;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
